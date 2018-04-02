@@ -1,0 +1,530 @@
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects
+$ ls
+proj1/  project/
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects
+$ mkdir 2ndapril
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects
+$ cd 2ndapril/
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril
+$ git init
+Initialized empty Git repository in D:/gitprojects/2ndapril/.git/
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ cp gitprojects/project1 2ndapril
+cp: cannot stat 'gitprojects/project1': No such file or directory
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ cp gitprojects/project1/boolean.cpp 2ndapril
+cp: cannot stat 'gitprojects/project1/boolean.cpp': No such file or directory
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Advanced-Data-structures-1.txt
+        boolean.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ clear
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git add .
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git commit -m " first commit on 2nd april,before branching"
+[master (root-commit) 6be9dab]  first commit on 2nd april,before branching
+ 2 files changed, 89 insertions(+)
+ create mode 100644 Advanced-Data-structures-1.txt
+ create mode 100644 boolean.cpp
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git remote add origin "https://github.com/MonitK/2nd-april"
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git push -u origin master
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitK
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 3.97 KiB | 1.98 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/MonitK/2nd-april
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ vi boolean.cpp
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git commit -m " updated boolean.cpp"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+        modified:   boolean.cpp
+
+no changes added to commit
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git commit -a -m " updated boolean.cpp"
+[master 8d3347e]  updated boolean.cpp
+ 1 file changed, 12 deletions(-)
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git log
+commit 8d3347ea7f0d1586969ed3a2b9877dafa863dbf3 (HEAD -> master)
+Author: MonitK <mkapoor@ddn.upes.ac.in>
+Date:   Mon Apr 2 15:24:34 2018 +0530
+
+     updated boolean.cpp
+
+commit 6be9dab0135795612e41aee321db37bd76ce0c0c (origin/master)
+Author: MonitK <mkapoor@ddn.upes.ac.in>
+Date:   Mon Apr 2 15:21:11 2018 +0530
+
+     first commit on 2nd april,before branching
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git log --oneline
+8d3347e (HEAD -> master)  updated boolean.cpp
+6be9dab (origin/master)  first commit on 2nd april,before branching
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git branch test
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git checkout test
+Switched to branch 'test'
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ vi boolean.cpp
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git add .
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git commit -m "first commit on test branch"
+[test c5612f0] first commit on test branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git push
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitK
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 317 bytes | 317.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/MonitK/2nd-april
+   6be9dab..8d3347e  master -> master
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git checkout test
+Switched to branch 'test'
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git push
+fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin test
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git push --set-upstream origin test
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitK
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 292 bytes | 292.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/MonitK/2nd-april
+ * [new branch]      test -> test
+Branch 'test' set up to track remote branch 'test' from 'origin'.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git remote
+origin
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git branch
+  master
+* test
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git checkout test
+Switched to branch 'test'
+Your branch is up to date with 'origin/test'.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config --global --help
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config --user
+error: unknown option `user'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config user.name
+MonitK'
+
+
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config user.email
+mkapoor@ddn.upes.ac.in
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config user.name=MonitKapoor
+error: invalid key: user.name=MonitKapoor
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config user.name = MonitKapoor
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config user.email = mkapoor@ddn.upes.ac.in
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git config --user
+error: unknown option `user'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git remote
+origin
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git remove orogin
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git remove remote origin
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git remote remove origin
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ git remote
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2ndapril (master)
+$ cd ..
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects
+$ git clone "https://github.com/MonitK/2nd-april"
+Cloning into '2nd-april'...
+remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 10 (delta 4), reused 8 (delta 2), pack-reused 0
+Unpacking objects: 100% (10/10), done.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects
+$ ls
+2ndapril/  2nd-april/  proj1/  project/
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects
+$ cd 2nd-april/
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ ls -ah
+./  ../  .git/  Advanced-Data-structures-1.txt  boolean.cpp
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ vi Advanced-Data-structures-1.txt
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ vi boolean.cpp
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git remote add origin "https://github.com/MonitK/2nd-april"
+fatal: remote origin already exists.
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git remote
+origin
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git add .
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git commit -m " from cloned"
+[master 804fd5c]  from cloned
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git push
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitKapoor
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/MonitK/2nd-april/'
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git push
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitKapoor
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/MonitK/2nd-april/'
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git push
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitKapoor
+remote: Permission to MonitK/2nd-april.git denied to MonitKapoor.
+fatal: unable to access 'https://github.com/MonitK/2nd-april/': The requested URL returned error: 403
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+$ git push
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': MonitKapoor
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 281 bytes | 281.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/MonitK/2nd-april
+   8d3347e..804fd5c  master -> master
+
+mkapoor@mkapoor-ltp MINGW64 /d/gitprojects/2nd-april (master)
+
