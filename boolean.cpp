@@ -23,5 +23,4 @@ cout<<sizeof(b);
 [user1@clab monit]$ g++ boolean.cpp -Wno-deprecated -o boolean
 [user1@clab monit]$ ./boolean
 true value
-1
-
+5000
